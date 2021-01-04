@@ -1,0 +1,13 @@
+{
+  "limitCount": 15,
+  "memberLimit": 100,
+  "groupLimit": 100,
+  "barbarkey": "SLpvUgOcMYwIx0pFeELt",
+  "vhtearkey": "yunoyanz",
+  "prefix": ".",
+  "mtc": false,
+  "restartState": false,
+  "restartId": "undefined",
+  "banChats": false,
+  "Rest": true
+}
