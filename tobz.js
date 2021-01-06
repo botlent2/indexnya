@@ -348,7 +348,7 @@ module.exports = tobz = async (tobz, message) => {
             }
         }
 
-        const tutor = 'https://i.ibb.co/Hp1XGbL/a4dec92b8922.jpg'
+        const tutor = 'https://i.ibb.co/4dWNwm9/Screenshot-2021-01-05-00-57-53-174-com-whatsapp.png'
         const errorurl = 'https://steamuserimages-a.akamaihd.net/ugc/954087817129084207/5B7E46EE484181A676C02DFCAD48ECB1C74BC423/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'
         const errorurl2 = 'https://steamuserimages-a.akamaihd.net/ugc/954087817129084207/5B7E46EE484181A676C02DFCAD48ECB1C74BC423/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'
        
@@ -419,7 +419,7 @@ module.exports = tobz = async (tobz, message) => {
                     let msg = i.msg
                     if (msg >= 3) { // 3X BADWORD AKAN TERKENA KICK
                         kasar === true 
-                        tobz.reply(from, `*「 𝗔𝗡𝗧𝗜 𝗕𝗔𝗗𝗪𝗢𝗥𝗗 」*\nKamu telah berkata kasar di grup ini, kamu akan di kick otomatis oleh Maslent!`, id).then(() => {
+                        tobz.reply(from, `*「 𝗔𝗡𝗧𝗜 𝗕𝗔𝗗𝗪𝗢𝗥𝗗 」*\nKamu telah berkata kasar di grup ini, kamu akan di kick otomatis oleh Yuno!`, id).then(() => {
                             tobz.removeParticipant(groupId, id)
                         })
                         return true;
@@ -1848,7 +1848,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            const keywords = message.body.replace('#malcharacter', '')
+            const keywords = message.body.replace('.malcharacter', '')
             try {
             const data = await fetch(
            `https://api.jikan.moe/v3/search/character?q=${keywords}`
@@ -1881,7 +1881,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, `[❗] Kirim perintah *#jadwalShalat [ Daerah ]*\ncontoh : *#jadwalShalat Tangerang*\nUntuk list daerah kirim perintah *#listDaerah*`)
+            if (args.length === 1) return tobz.reply(from, `[❗] Kirim perintah *.jadwalShalat [ Daerah ]*\ncontoh : *.jadwalShalat Tangerang*\nUntuk list daerah kirim perintah *.listDaerah*`)
             const daerah = body.slice(14)
             const jadwalShalat = await axios.get(`https://api.vhtear.com/jadwalsholat?query=${daerah}&apiKey=${vhtearkey}`)
             if (jadwalShalat.data.error) return tobz.reply(from, jadwalShalat.data.error, id)
@@ -1898,7 +1898,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, `Kirim perintah Surah Quran kamu dengan cara ketik perintah :\n*#quran* [ Urutan Surat ]\nContoh :\n*#quran 1*`, id)
+            if (args.length === 1) return tobz.reply(from, `Kirim perintah Surah Quran kamu dengan cara ketik perintah :\n*.quran* [ Urutan Surat ]\nContoh :\n*.quran 1*`, id)
             const qura = `https://api.vhtear.com/quran?no=${args[1]}&apikey=${vhtearkey}`
             const quraan = await axios.get(qura)
             const quraann = quraan.data
@@ -1929,7 +1929,7 @@ ${desc}`)
         case prefix+'infosurah': // ARUGAZ
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length == 1) return tobz.reply(from, `Kirim perintah *#infosurah [ Nama Surah ]*\nContoh : *#infosurah al-fatihah*`, message.id)
+            if (args.length == 1) return tobz.reply(from, `Kirim perintah *.infosurah [ Nama Surah ]*\nContoh : *.infosurah al-fatihah*`, message.id)
                 var responseh = await axios.get('https://raw.githubusercontent.com/ArugaZ/scraper-results/main/islam/surah.json')
                 var { data } = responseh.data
                 var idx = data.findIndex(function(post, index) {
@@ -1951,7 +1951,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length == 1) return tobz.reply(from, `Kirim perintah *#tafsir [ Nama Surah ] [ Ayat ]*\nContoh : *#tafsir al-fatihah 2*`, message.id)
+            if (args.length == 1) return tobz.reply(from, `Kirim perintah *.tafsir [ Nama Surah ] [ Ayat ]*\nContoh : *.tafsir al-fatihah 2*`, message.id)
                 var responsh = await axios.get('https://raw.githubusercontent.com/ArugaZ/scraper-results/main/islam/surah.json')
                 var {data} = responsh.data
                 var idx = data.findIndex(function(post, index) {
@@ -1992,7 +1992,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#ssphone [linkWeb]*\nContoh : *#ssphone https://neonime.vip*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.ssphone [linkWeb]*\nContoh : *.ssphone https://neonime.vip*', id)
             const ssphone = body.slice(9)
             tobz.sendFileFromUrl(from, `https://api.vhtear.com/ssweb?link=${ssphone}&type=phone&apikey=${vhtearkey}`, 'ssphone.jpg', '', id)
             await limitAdd(serial)
@@ -2001,7 +2001,7 @@ ${desc}`)
             if(isReg(obj)) return
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#sspc [linkWeb]*\nContoh : *#sspc https://neonime.vip*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.sspc [linkWeb]*\nContoh : *.sspc https://neonime.vip*', id)
             const sspc = body.slice(6)
             tobz.sendFileFromUrl(from, `https://api.vhtear.com/ssweb?link=${sspc}&type=pc&apikey=${vhtearkey}`, 'sspc.jpg', '', id)
             await limitAdd(serial)
@@ -2011,7 +2011,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#shorturl [linkWeb]*\nContoh : *#shorturl https://neonime.vip*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.shorturl [linkWeb]*\nContoh : *.shorturl https://neonime.vip*', id)
             const sorturl = body.slice(10)
             const surl = await axios.get('https://tobz-api.herokuapp.com/api/shorturl?url=' + sorturl)
             const surll = surl.data
@@ -2025,7 +2025,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#cuaca [tempat]*\nContoh : *#cuaca tangerang', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.cuaca [tempat]*\nContoh : *.cuaca tangerang', id)
             const tempat = body.slice(7)
             const weather = await axios.get('https://mhankbarbars.herokuapp.com/api/cuaca?q='+ tempat +'&apiKey='+ barbarkey)
             const weatherr = weather.data
@@ -2100,8 +2100,8 @@ ${desc}`)
             if(isReg(obj)) return
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group', id)
-            if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik #ceklimit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length == 1) return tobz.reply(from, `Untuk mencari lagu dari youtube\n\nPenggunaan: #play judul lagu`, id)
+            if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik .ceklimit Untuk Mengecek Kuota Limit Kamu`, id)
+            if (args.length == 1) return tobz.reply(from, `Untuk mencari lagu dari youtube\n\nPenggunaan: .play judul lagu`, id)
             try {
                 tobz.reply(from, mess.wait, id)
                 const serplay = body.slice(6)
@@ -2196,7 +2196,7 @@ ${desc}`)
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             tobz.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281311850715', id)
           break
-        case prefix+'getnhentai': // DOWNLOADER NHENTAI PDF FROM #NHENTAI
+        case prefix+'getnhentai': // DOWNLOADER NHENTAI PDF FROM .NHENTAI
             if(isReg(obj)) return
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
@@ -2208,7 +2208,7 @@ ${desc}`)
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             tobz.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281311850715', id)
             break
-        case prefix+'getxvideos': // DOWNLOADER VIDEO FROM #VIDEO
+        case prefix+'getxvideos': // DOWNLOADER VIDEO FROM .VIDEO
             if(isReg(obj)) return
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
@@ -2218,7 +2218,7 @@ ${desc}`)
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             tobz.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281311850715', id)
             break
-        case prefix+'getvideo': // DOWNLOADER VIDEO FROM #VIDEO
+        case prefix+'getvideo': // DOWNLOADER VIDEO FROM .VIDEO
             if(isReg(obj)) return
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
@@ -2230,7 +2230,7 @@ ${desc}`)
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             tobz.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281311850715', id)
             break
-        case prefix+'getmusic': // DOWNLOADER MUSIC FROM #MUSIC
+        case prefix+'getmusic': // DOWNLOADER MUSIC FROM .MUSIC
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             tobz.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281311850715', id)
             break
@@ -2264,7 +2264,7 @@ ${desc}`)
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (!isNsfw) return tobz.reply(from, 'command/Perintah NSFW belum di aktifkan di group ini!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#xnxx [linkXnxx]*, untuk contoh silahkan kirim perintah *#readme*')
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.xnxx [linkXnxx]*, untuk contoh silahkan kirim perintah *.readme*')
             if (!args[1].match(isUrl) && !args[1].includes('xnxx.com')) return tobz.reply(from, mess.error.Iv, id)
             try {
                 tobz.reply(from, mess.wait, id)
@@ -2288,7 +2288,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#ramalpasangan [kamu|pasangan]*\nContoh : *#ramalpasangan Chichi|Yuno*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.ramalpasangan [kamu|pasangan]*\nContoh : *.ramalpasangan Chichi|Yuno*', id)
             arg = body.trim().split('|')
             if (arg.length >= 2) {
             tobz.reply(from, mess.wait, id)
@@ -2330,7 +2330,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#zodiak [zodiak kamu]*\nContoh : *#zodiak scorpio*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.zodiak [zodiak kamu]*\nContoh : *.zodiak scorpio*', id)
             try {
             const resp = await axios.get('https://api.vhtear.com/zodiak?query=' + body.slice(8) + '&apikey=' + vhtearkey)
             if (resp.data.error) return tobz.reply(from, resp.data.error, id)
@@ -2422,7 +2422,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#heroml [nama hero]*\nContoh : *#heroml akai*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.heroml [nama hero]*\nContoh : *.heroml akai*', id)
             try {
             const resp = await axios.get('https://api.vhtear.com/herodetail?query=' + body.slice(8) + '&apikey=' + vhtearkey)
             if (resp.data.error) return tobz.reply(from, resp.data.error, id)
@@ -2440,7 +2440,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#nomorhoki [no hp kamu]*\nContoh : *#nomorhoki 0895384009405*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.nomorhoki [no hp kamu]*\nContoh : *.nomorhoki 0895384009405*', id)
             try {
             const resp = await axios.get('https://api.vhtear.com/nomerhoki?no=' + body.slice(11) + '&apikey=' + vhtearkey)
             if (resp.data.error) return tobz.reply(from, resp.data.error, id)
@@ -2458,7 +2458,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#artimimpi [mimpi]*\nContoh : *#artimimpi ular*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.artimimpi [mimpi]*\nContoh : *.artimimpi ular*', id)
             try {
             const resp = await axios.get('https://api.vhtear.com/artimimpi?query=' + body.slice(10) + '&apikey=' + vhtearkey)
             if (resp.data.error) return tobz.reply(from, resp.data.error, id)
@@ -2476,7 +2476,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, `Kirim perintah *#wiki [ Query ]*\nContoh : *#wiki asu*`, id)
+            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.wiki [ Query ]*\nContoh : *.wiki asu*`, id)
             const queryz_ = body.slice(6)
             const wiki = await axios.get(`https://api.vhtear.com/wikipedia?query=${queryz_}&apikey=${vhtearkey}`)
             if (wiki.data.error) {
@@ -2490,7 +2490,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, `Kirim perintah *#kbbi [ Query ]*\nContoh : *#kbbi asu*`, id)
+            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.kbbi [ Query ]*\nContoh : *.kbbi asu*`, id)
             const kbbl = body.slice(6)
             const kbbl2 = await axios.get(`https://api.vhtear.com/kbbi?query=${kbbl}&apikey=${vhtearkey}`)
 
@@ -2510,8 +2510,8 @@ ${desc}`)
             if (argz.length >= 2) {
             const qwery = argz[1]
             const jum = argz[2]
-            if(!qwery) return await tobz.reply(from, `Kirim perintah *#googleimage [ |Query|Jumlah ]*, contoh = #googleimage |loli|3`, id)
-            if(!jum) return await tobz.reply(from, `Jumlah gambar diperlukan, contoh = #googleimage |loli|3`, id)
+            if(!qwery) return await tobz.reply(from, `Kirim perintah *.googleimage [ |Query|Jumlah ]*, contoh = .googleimage |loli|3`, id)
+            if(!jum) return await tobz.reply(from, `Jumlah gambar diperlukan, contoh = .googleimage |loli|3`, id)
             if(jum >= 5) return await tobz.reply(from, 'Jumlah terlalu banyak! Max 4', id)
             var gis = require('g-i-s');
             var opts = {
@@ -2539,7 +2539,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1)  return tobz.reply(from, 'Kirim perintah *#sandwriting [ Teks ]*\nContoh *#sandwriting Chichi Cantik*', id)
+            if (args.length === 1)  return tobz.reply(from, 'Kirim perintah *.sandwriting [ Teks ]*\nContoh *.sandwriting Chichi Cantik*', id)
             const swrt = body.slice(13)
             try {
             const swrt2 = await axios.get('https://api.vhtear.com/sand_writing?text1=' + swrt + '&apikey=' + vhtearkey)
@@ -2563,7 +2563,7 @@ ${desc}`)
              if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
              if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
              const jreng = body.slice(7)
-             if (!jreng) return tobz.reply(from, 'Kirim perintah *#tahta [teks]*\n\nContoh *#tahta yuno*', id)
+             if (!jreng) return tobz.reply(from, 'Kirim perintah *.tahta [teks]*\n\nContoh *.tahta yuno*', id)
              if (jreng.length > 7) return tobz.reply(from, 'Maksimal 7 Huruf!', id)
              tobz.sendText(from, '_Sedang diproses, mohon tunggu sebentar!..._', id)
              await tobz.sendFileFromUrl(from, `https://api.vhtear.com/hartatahta?text=${jreng}&apikey=${vhtearkey}`,`${jreng}.jpg`,`Harta Tahta ${jreng}`, id)        
@@ -2574,7 +2574,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1)  return tobz.reply(from, 'Kirim perintah *#resepmasakan [optional]*\nContoh *#resepmasakan rawon*', id)
+            if (args.length === 1)  return tobz.reply(from, 'Kirim perintah *.resepmasakan [optional]*\nContoh *.resepmasakan rawon*', id)
             arg = body.trim().split(' ')
             console.log(...arg[1])
             var slicedArgs = Array.prototype.slice.call(arg, 1);
@@ -2605,7 +2605,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1)  return tobz.reply(from, 'Kirim perintah *#twtstalk @username*\nContoh *#twtstalk @miakhalifah*', id)
+            if (args.length === 1)  return tobz.reply(from, 'Kirim perintah *.twtstalk @username*\nContoh *.twtstalk @miakhalifah*', id)
             arg = body.trim().split(' ')
             console.log(...arg[1])
             var slicedArgs = Array.prototype.slice.call(arg, 1);
@@ -2637,7 +2637,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1)  return tobz.reply(from, 'Kirim perintah *#igstalk @username*\nContoh *#igstalk duar_amjay*', id)
+            if (args.length === 1)  return tobz.reply(from, 'Kirim perintah *.igstalk @username*\nContoh *.igstalk duar_amjay*', id)
             arg = body.trim().split(' ')
             console.log(...arg[1])
             var slicedArgs = Array.prototype.slice.call(arg, 1);
@@ -2671,7 +2671,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1)  return tobz.reply(from, 'Kirim perintah *#tiktokstalk @username*\nContoh *#tiktokstalk @duar_amjay*', id)
+            if (args.length === 1)  return tobz.reply(from, 'Kirim perintah *.tiktokstalk @username*\nContoh *.tiktokstalk @duar_amjay*', id)
             arg = body.trim().split(' ')
             console.log(...arg[1])
             var slicedArgs = Array.prototype.slice.call(arg, 1);
@@ -2707,7 +2707,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#smulestalk [@username]*\nContoh : *#smulestalk loli*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.smulestalk [@username]*\nContoh : *.smulestalk loli*', id)
             arg = body.trim().split(' ')
             console.log(...arg[1])
             var slicedArgs = Array.prototype.slice.call(arg, 1);
@@ -2741,7 +2741,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (!isSimi) return tobz.reply(from, 'command/Perintah Simi belum di aktifkan di group ini!', id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *# [teks]*\nContoh : *# halo*')
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *. [teks]*\nContoh : *. halo*')
             const que = body.slice(2)
             const sigo = await axios.get(`http://simsumi.herokuapp.com/api?text=${que}&lang=id`)
             const sigot = sigo.data
@@ -2753,7 +2753,7 @@ ${desc}`)
             if(isReg(obj)) return
             if(cekumur(cekage)) return
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, `Kirim perintah *#ig [ Link Instagram ]* untuk contoh silahkan kirim perintah *#readme*`)
+            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.ig [ Link Instagram ]* untuk contoh silahkan kirim perintah *.readme*`)
             if (!args[1].match(isUrl) && !args[1].includes('instagram.com')) return tobz.reply(from, `Maaf, link yang kamu kirim tidak valid. [Invalid Link]`, id)
             await tobz.reply(from, mess.wait, id);
             instagram(args[1]).then(async(res) => {
@@ -2777,7 +2777,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, `Kirim perintah *#fb [ Link Fb ]*\nContoh : *#fb https://www.facebook.com/24609282673/posts/10158628585367674/*`, id)
+            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.fb [ Link Fb ]*\nContoh : *.fb https://www.facebook.com/24609282673/posts/10158628585367674/*`, id)
             tobz.reply(from, mess.wait, id)
             facebook(args[1]).then(async(res) => {
                 let { VideoUrl } = await res
@@ -2801,7 +2801,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#tiktok [linkTiktok]*\nContoh : *#tiktok https://vt.tiktok.com/yqyjPX/*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.tiktok [linkTiktok]*\nContoh : *.tiktok https://vt.tiktok.com/yqyjPX/*', id)
             tobz.reply(from, mess.wait, id)
             tiktok(args[1]).then(async(res) => {
                 let { video, title, image, desk, dibuat, duration } = await res
@@ -2819,7 +2819,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#smule [linkSmule]*\nContoh : *#smule https://www.smule.com/p/767512225_3062360163*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.smule [linkSmule]*\nContoh : *.smule https://www.smule.com/p/767512225_3062360163*', id)
             tobz.reply(from, mess.wait, id)
             smule(args[1]).then(async(res) => {
                 let { Type, title, url, image } = await res
@@ -2837,7 +2837,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#starmaker [linkStarmaker]* untuk contoh silahkan kirim perintah *#readme*')
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.starmaker [linkStarmaker]* untuk contoh silahkan kirim perintah *.readme*')
             tobz.reply(from, mess.wait, id)
             starmaker(args[1]).then(async(res) => {
                 let { image, desc, url, title } = await res
@@ -2855,7 +2855,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, `Kirim perintah *#twitter [ Link Twitter ]* untuk contoh silahkan kirim perintah *#readme*`)
+            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.twitter [ Link Twitter ]* untuk contoh silahkan kirim perintah *.readme*`)
             tobz.reply(from, mess.wait, id)
             twitter(args[1]).then(async(res) => {
                 let { desk, urlVideo } = await res
@@ -2872,7 +2872,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#maps [optional]*, Contoh : *#maps Jakarta*')
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.maps [optional]*, Contoh : *.maps Jakarta*')
             arg = body.trim().split(' ')
             console.log(...arg[1])
             var slicedArgs = Array.prototype.slice.call(arg, 1);
@@ -2898,7 +2898,7 @@ ${desc}`)
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
             tobz.reply(from, mess.wait, id)
-            if (args.length === 1) return tobz.reply(from, `Kirim perintah *#joox [ Optional ]*\nContoh : *#joox Alan Walker*`, id)
+            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.joox [ Optional ]*\nContoh : *.joox Alan Walker*`, id)
             tobz.reply(from, mess.wait, id)
             joox(args[1]).then(async(res) => {
                 let { penyanyi, judul, album, linkImg, linkMp3, filesize, ext, duration } = await res
@@ -2916,7 +2916,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#checkip [ipaddress]*\nContoh : *#checkip 182.0.144.145*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.checkip [ipaddress]*\nContoh : *.checkip 182.0.144.145*', id)
             tobz.reply(from, mess.wait, id)
             arg = body.trim().split(' ')
             console.log(...arg[1])
@@ -2991,7 +2991,7 @@ ${desc}`)
                     tobz.reply(from, '[❗] Kode nuklir Salah!')
                 }
             } else {
-                tobz.reply(from, '[ WRONG ] Kirim perintah *#nhentai [kode]* untuk contoh kirim perintah *#readme*')
+                tobz.reply(from, '[ WRONG ] Kirim perintah *.nhentai [kode]* untuk contoh kirim perintah *.readme*')
             }
             break*/
         case prefix+'brainly':
@@ -3028,10 +3028,10 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, '[❗] Kirim perintah *#math [ Angka ]*\nContoh : #math 12*12\n*NOTE* :\n- Untuk Perkalian Menggunakan *\n- Untuk Pertambahan Menggunakan +\n- Untuk Pengurangan Mennggunakan -\n- Untuk Pembagian Menggunakan /')
+            if (args.length === 1) return tobz.reply(from, '[❗] Kirim perintah *.math [ Angka ]*\nContoh : .math 12*12\n*NOTE* :\n- Untuk Perkalian Menggunakan *\n- Untuk Pertambahan Menggunakan +\n- Untuk Pengurangan Mennggunakan -\n- Untuk Pembagian Menggunakan /')
             const mtk = body.slice(6)
             if (typeof Math_js.evaluate(mtk) !== "number") {
-            tobz.reply(from, `"${mtk}", bukan angka!\n[❗] Kirim perintah *#math [ Angka ]*\nContoh : #math 12*12\n*NOTE* :\n- Untuk Perkalian Menggunakan *\n- Untuk Pertambahan Menggunakan +\n- Untuk Pengurangan Mennggunakan -\n- Untuk Pembagian Menggunakan /`, id)
+            tobz.reply(from, `"${mtk}", bukan angka!\n[❗] Kirim perintah *.math [ Angka ]*\nContoh : .math 12*12\n*NOTE* :\n- Untuk Perkalian Menggunakan *\n- Untuk Pertambahan Menggunakan +\n- Untuk Pengurangan Mennggunakan -\n- Untuk Pembagian Menggunakan /`, id)
             limitAdd(serial)
         } else {
             tobz.reply(from, `*「 MATH 」*\n\n*Kalkulator*\n${mtk} = ${Math_js.evaluate(mtk)}`, id)
@@ -3121,7 +3121,7 @@ ${desc}`)
                     })
                 })
             } else {
-                tobz.reply(from, 'Usage: \n#quotemaker |teks|watermark|theme\n\nEx :\n#quotemaker |ini contoh|bicit|random', id)
+                tobz.reply(from, 'Usage: \n.quotemaker |teks|watermark|theme\n\nEx :\n.quotemaker |ini contoh|bicit|random', id)
             }
             break
         /*case prefix+'listchannel':
@@ -3133,7 +3133,7 @@ ${desc}`)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
             
             await limitAdd(serial)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#jadwalTv [channel]*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.jadwalTv [channel]*', id)
             const query = body.slice(10).toLowerCase()
             const jadwal = await jadwalTv(query)
             tobz.reply(from, jadwal, id)
@@ -3151,7 +3151,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#nulis [teks]*, contoh *#nulis aku bukan boneka*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.nulis [teks]*, contoh *.nulis aku bukan boneka*', id)
             const ngettik = body.slice(7)
             const ngetikk = await axios.get('https://mhankbarbars.herokuapp.com/nulis?text='+ ngettik+'&apiKey='+ barbarkey)
             if (ngetikk.data.error) return tobz.reply(from, ngetikk.data.error, id)
@@ -3222,7 +3222,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length == 1) return tobz.reply(from, 'Kirim perintah *#lirik [optional]*, contoh *#lirik aku bukan boneka*', id)
+            if (args.length == 1) return tobz.reply(from, 'Kirim perintah *.lirik [optional]*, contoh *.lirik aku bukan boneka*', id)
             const lagu = body.slice(7)
             const lirik = await liriklagu(lagu)
             tobz.reply(from, lirik, id)
@@ -3233,7 +3233,7 @@ ${desc}`)
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#chord [query]*, contoh *#chord aku bukan boneka*', id)
+            if (args.length === 1) return tobz.reply(from, 'Kirim perintah *.chord [query]*, contoh *.chord aku bukan boneka*', id)
             const query__ = body.slice(7)
             const chord = await axios.get('https://tobz-api.herokuapp.com/api/chord?q='+ query__)
             if (chord.data.error) return tobz.reply(from, chord.data.error, id)
@@ -3501,7 +3501,7 @@ ${desc}`)
             if (!isGroupMsg) return tobz.reply(from, 'Fitur ini hanya bisa di gunakan dalam group', id)
             if (!isGroupAdmins) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan oleh admin group', id)
             if (!isBotGroupAdmins) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan ketika bot menjadi admin', id)
-            if (mentionedJidList.length === 0) return tobz.reply(from, 'Untuk menggunakan Perintah ini, kirim perintah *#kick* @tagmember', id)
+            if (mentionedJidList.length === 0) return tobz.reply(from, 'Untuk menggunakan Perintah ini, kirim perintah *.kick* @tagmember', id)
             await tobz.sendText(from, `Perintah diterima, mengeluarkan:\n${mentionedJidList.join('\n')}`)
             for (let i = 0; i < mentionedJidList.length; i++) {
                 if ((adminNumber, groupAdmins).includes(mentionedJidList[i])) return tobz.reply(from, mess.error.Sp, id)
@@ -3522,7 +3522,7 @@ ${desc}`)
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group', id)
             if (!isOwner, !isAdmin) return tobz.reply(from, 'Perintah ini hanya untuk Admin Yuno', id)
             if (!isBotGroupAdmins) return tobz.reply(from, 'Fitur ini hanya bisa di gunakan ketika bot menjadi admin', id)
-            if (mentionedJidList.length === 0) return tobz.reply(from, 'Untuk menggunakan fitur ini, kirim perintah *#promote* @tagmember', id)
+            if (mentionedJidList.length === 0) return tobz.reply(from, 'Untuk menggunakan fitur ini, kirim perintah *.promote* @tagmember', id)
             if (mentionedJidList.length >= 2) return tobz.reply(from, 'Maaf, perintah ini hanya dapat digunakan kepada 1 user.', id)
             if (groupAdmins.includes(mentionedJidList[0])) return tobz.reply(from, 'Maaf, user tersebut sudah menjadi admin.', id)
             await tobz.promoteParticipant(groupId, mentionedJidList[0])
@@ -3532,7 +3532,7 @@ ${desc}`)
             if (!isGroupMsg) return tobz.reply(from, 'Fitur ini hanya bisa di gunakan dalam group', id)
             if (!isGroupAdmins) return tobz.reply(from, 'Fitur ini hanya bisa di gunakan oleh admin group', id)
             if (!isBotGroupAdmins) return tobz.reply(from, 'Fitur ini hanya bisa di gunakan ketika bot menjadi admin', id)
-            if (mentionedJidList.length === 0) return tobz.reply(from, 'Untuk menggunakan fitur ini, kirim perintah *#promote* @tagmember', id)
+            if (mentionedJidList.length === 0) return tobz.reply(from, 'Untuk menggunakan fitur ini, kirim perintah *.promote* @tagmember', id)
             if (mentionedJidList.length >= 2) return tobz.reply(from, 'Maaf, perintah ini hanya dapat digunakan kepada 1 user.', id)
             if (groupAdmins.includes(mentionedJidList[0])) return tobz.reply(from, 'Maaf, user tersebut sudah menjadi admin.', id)
             await tobz.promoteParticipant(groupId, mentionedJidList[0])
@@ -3542,7 +3542,7 @@ ${desc}`)
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group', id)
             if (!isOwner, !isAdmin) return tobz.reply(from, 'Perintah ini hanya untuk Admin Yuno', id)
             if (!isBotGroupAdmins) return tobz.reply(from, 'Fitur ini hanya bisa di gunakan ketika bot menjadi admin', id)
-            if (mentionedJidList.length === 0) return tobz.reply(from, 'Untuk menggunakan fitur ini, kirim perintah *#demote* @tagadmin', id)
+            if (mentionedJidList.length === 0) return tobz.reply(from, 'Untuk menggunakan fitur ini, kirim perintah *.demote* @tagadmin', id)
             if (mentionedJidList.length >= 2) return tobz.reply(from, 'Maaf, perintah ini hanya dapat digunakan kepada 1 orang.', id)
             if (!groupAdmins.includes(mentionedJidList[0])) return tobz.reply(from, 'Maaf, user tersebut tidak menjadi admin.', id)
             await tobz.demoteParticipant(groupId, mentionedJidList[0])
@@ -3552,7 +3552,7 @@ ${desc}`)
             if (!isGroupMsg) return tobz.reply(from, 'Fitur ini hanya bisa di gunakan dalam group', id)
             if (!isGroupAdmins) return tobz.reply(from, 'Fitur ini hanya bisa di gunakan oleh admin group', id)
             if (!isBotGroupAdmins) return tobz.reply(from, 'Fitur ini hanya bisa di gunakan ketika bot menjadi admin', id)
-            if (mentionedJidList.length === 0) return tobz.reply(from, 'Untuk menggunakan fitur ini, kirim perintah *#demote* @tagadmin', id)
+            if (mentionedJidList.length === 0) return tobz.reply(from, 'Untuk menggunakan fitur ini, kirim perintah *.demote* @tagadmin', id)
             if (mentionedJidList.length >= 2) return tobz.reply(from, 'Maaf, perintah ini hanya dapat digunakan kepada 1 orang.', id)
             if (!groupAdmins.includes(mentionedJidList[0])) return tobz.reply(from, 'Maaf, user tersebut tidak menjadi admin.', id)
             await tobz.demoteParticipant(groupId, mentionedJidList[0])
@@ -3578,14 +3578,14 @@ ${desc}`)
         case prefix+'odelete':
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group', id)
             if (!isOwner, !isAdmin) return tobz.reply(from, 'Perintah ini hanya untuk Admin Yuno', id)
-            if (!quotedMsg) return tobz.reply(from, 'Salah!!, kirim perintah *#delete [tagpesanbot]*', id)
+            if (!quotedMsg) return tobz.reply(from, 'Salah!!, kirim perintah *.delete [tagpesanbot]*', id)
             if (!quotedMsgObj.fromMe) return tobz.reply(from, 'Salah!!, Bot tidak bisa mengahpus chat user lain!', id)
             tobz.deleteMessage(quotedMsgObj.chatId, quotedMsgObj.id, false)
             break
         case prefix+'delete':
             if (!isGroupMsg) return tobz.reply(from, 'Fitur ini hanya bisa di gunakan dalam group', id)
             if (!isGroupAdmins) return tobz.reply(from, 'Fitur ini hanya bisa di gunakan oleh admin group', id)
-            if (!quotedMsg) return tobz.reply(from, 'Salah!!, kirim perintah *#delete [tagpesanbot]*', id)
+            if (!quotedMsg) return tobz.reply(from, 'Salah!!, kirim perintah *.delete [tagpesanbot]*', id)
             if (!quotedMsgObj.fromMe) return tobz.reply(from, 'Salah!!, Bot tidak bisa mengahpus chat user lain!', id)
             tobz.deleteMessage(quotedMsgObj.chatId, quotedMsgObj.id, false)
             break
@@ -3765,7 +3765,7 @@ ${desc}`)
                 await tobz.setProfilePic(imageBase64)
                 tobz.sendTextWithMentions(from, `Makasih @${sender.id.replace('@c.us','')} Foto Profilenya 😘`)
             } else {
-                tobz.reply(from, `Wrong Format!\n⚠️ Harap Kirim Gambar Dengan #setprofilepic`, id)
+                tobz.reply(from, `Wrong Format!\n⚠️ Harap Kirim Gambar Dengan .setprofilepic`, id)
             }
             break
         case prefix+'getpic':
@@ -3862,13 +3862,13 @@ ${desc}`)
                 await tobz.setGroupIcon(from, imageBase64)
                 tobz.sendTextWithMentions(from, `Profile group telah diubah oleh admin @${sender.id.replace('@c.us','')}`)
             } else {
-                tobz.reply(from, `Wrong Format!\n⚠️ Harap Kirim Gambar Dengan #setgroupicon`, id)
+                tobz.reply(from, `Wrong Format!\n⚠️ Harap Kirim Gambar Dengan .setgroupicon`, id)
             }
             break
         case prefix+'bugreport':
             if(isReg(obj)) return
             if(cekumur(cekage)) return
-            if (args.length === 1) return tobz.reply(from, '[❗] Kirim perintah *#bugreport [teks]*\ncontoh : *#bugreport Permisi Owner, Ada bug pada command #otakudesu, Tolong diperbaiki*')
+            if (args.length === 1) return tobz.reply(from, '[❗] Kirim perintah *.bugreport [teks]*\ncontoh : *.bugreport Permisi Owner, Ada bug pada command .otakudesu, Tolong diperbaiki*')
             const bug = body.slice(11)
             if(!bug) return
             if(isGroupMsg){
@@ -4035,7 +4035,7 @@ ${desc}`)
             tobz.reply(from, snk, id)
             break
         default:
-            //if (!isGroupMsg) return tobz.reply(from, 'Jika Ingin Menggunakan Bot Harap Masuk Ke Dalam Grup Yuno, Link Ada Di Bio atau Bisa Mengetik .yunogroup!\nJika Ingin Sewa Bot atau Bikin Bot Harap Ketik *#iklan*', id)
+            //if (!isGroupMsg) return tobz.reply(from, 'Jika Ingin Menggunakan Bot Harap Masuk Ke Dalam Grup Yuno, Link Ada Di Bio atau Bisa Mengetik .yunogroup!\nJika Ingin Sewa Bot atau Bikin Bot Harap Ketik *.iklan*', id)
             if (command.startsWith('.')) {
                 tobz.reply(from, `Maaf ${pushname}, Command *${args[0]}* Tidak Terdaftar Di Dalam *.menu*!`, id)
             }
