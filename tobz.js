@@ -276,7 +276,7 @@ module.exports = tobz = async (tobz, message) => {
             if (obj === true){
                 return false
             } else {     
-                return tobz.reply(from, `Kamu belum terdaftar sebagai Teman Yuno\nuntuk mendaftar kirim ${prefix}daftar |nama|umur\n\ncontoh format: ${prefix}daftar |Faris|15\n\ncukup gunakan nama depan/panggilan saja`, id) //if user is not registered
+                return tobz.reply(from, `Kamu belum terdaftar sebagai Teman Yuno\nuntuk mendaftar kirim ${prefix}daftar |nama|umur\n\ncontoh format: ${prefix}daftar |Hiro|15\n\ncukup gunakan nama depan/panggilan saja`, id) //if user is not registered
             }
         }
 
@@ -582,7 +582,7 @@ module.exports = tobz = async (tobz, message) => {
                 }
                 if(body === '.unmute' && isMuted(chatId) == false){
                     if(isGroupMsg) {
-                        if (!isAdmin) return tobz.reply(from, 'Maaf, perintah ini hanya dapat dilakukan oleh admin Faris!', id)
+                        if (!isAdmin) return tobz.reply(from, 'Maaf, perintah ini hanya dapat dilakukan oleh admin Hiro!', id)
                         if(isMsgLimit(serial)){
                             return
                         }else{
@@ -605,7 +605,7 @@ module.exports = tobz = async (tobz, message) => {
                     }
                 }
                 if (body === '.unbanchat') {
-                    if (!isOwner) return tobz.reply(from, 'Maaf, perintah ini hanya dapat dilakukan oleh Owner Faris!', id)
+                    if (!isOwner) return tobz.reply(from, 'Maaf, perintah ini hanya dapat dilakukan oleh Owner Hiro!', id)
                     if(setting.banChats === false) return
                     setting.banChats = false
                     banChats = false
@@ -617,7 +617,7 @@ module.exports = tobz = async (tobz, message) => {
 
         case prefix+'banchat':
             if (setting.banChats === true) return
-            if (!isOwner) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner Faris!', id)
+            if (!isOwner) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner Hiro!', id)
             setting.banChats = true
             banChats = true
             fs.writeFileSync('./lib/database/setting.json', JSON.stringify(setting, null, 2))
@@ -704,7 +704,7 @@ module.exports = tobz = async (tobz, message) => {
             if(isReg(obj)) return
             if(cekumur(cekage)) return
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.ttp2 [ Teks ]*, contoh *.ttp2 Faris*`, id)
+            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.ttp2 [ Teks ]*, contoh *.ttp2 Hiro*`, id)
             const ttp2t = body.slice(6)
             const lttp2 = ["Orange","White","Green","Black","Purple","Red","Yellow","Blue","Navy","Grey","Magenta","Brown","Gold"]
             const rttp2 = lttp2[Math.floor(Math.random() * (lttp2.length))]
@@ -906,7 +906,7 @@ module.exports = tobz = async (tobz, message) => {
             if(isReg(obj)) return
             if(cekumur(cekage)) return
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.blackpink [ Teks ]*, contoh *.blackpink Faris*`, id)
+            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.blackpink [ Teks ]*, contoh *.blackpink Hiro*`, id)
             tobz.reply(from, mess.wait, id)
             const blpk = body.slice(11)
             if (blpk.length > 10) return tobz.reply(from, '*Teks Terlalu Panjang!*\n_Maksimal 10 huruf!_', id)
@@ -916,7 +916,7 @@ module.exports = tobz = async (tobz, message) => {
             if(isReg(obj)) return
             if(cekumur(cekage)) return
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.thunder [ Teks ]*, contoh *.thunder Faris*`, id)
+            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.thunder [ Teks ]*, contoh *.thunder Hiro*`, id)
             tobz.reply(from, mess.wait, id)
             const thndr = body.slice(9)
             if (thndr.length > 10) return tobz.reply(from, '*Teks Terlalu Panjang!*\n_Maksimal 10 huruf!_', id)
@@ -926,7 +926,7 @@ module.exports = tobz = async (tobz, message) => {
             if(isReg(obj)) return
             if(cekumur(cekage)) return
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.pornhub [ |Teks1|Teks2 ]*, contoh *.pornhub |Faris|Dev Faris*`, id)
+            if (args.length === 1) return tobz.reply(from, `Kirim perintah *.pornhub [ |Teks1|Teks2 ]*, contoh *.pornhub |Hiro|Dev Hiro*`, id)
             argz = body.trim().split('|')
             if (argz.length >= 2) {
                 tobz.reply(from, mess.wait, id)
@@ -937,7 +937,7 @@ module.exports = tobz = async (tobz, message) => {
                 tobz.sendFileFromUrl(from, `https://api.vhtear.com/pornlogo?text1=${lpornhub}&text2=${lpornhub2}&apikey=${vhtearkey}`)
                 await limitAdd(serial)
             } else {
-                await tobz.reply(from, `Wrong Format!\n[❗] Kirim perintah *.pornhub [ |Teks1|Teks2 ]*, contoh *.pornhub |Faris|Dev Faris*`, id)
+                await tobz.reply(from, `Wrong Format!\n[❗] Kirim perintah *.pornhub [ |Teks1|Teks2 ]*, contoh *.pornhub |Hiro|Dev Hiro*`, id)
             }
             break
         case prefix+'glitch':
