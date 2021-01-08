@@ -2070,6 +2070,7 @@ ${desc}`)
         case prefix+'ytmp4':
             if(isReg(obj)) return
             if(cekumur(cekage)) return
+            if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
             if (args.length === 1) return tobz.reply(from, `Kirim perintah *${prefix}ytmp4 [ Link Yt ]*, untuk contoh silahkan kirim perintah *${prefix}readme*`)
             let isLin = args[1].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
@@ -2098,6 +2099,7 @@ ${desc}`)
         case prefix+'play':
             if(isReg(obj)) return
             if(cekumur(cekage)) return
+            if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group', id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik .limit Untuk Mengecek Kuota Limit Kamu`, id)
             if (args.length == 1) return tobz.reply(from, `Untuk mencari lagu dari youtube\n\nPenggunaan: .play judul lagu`, id)
             try {
@@ -2124,6 +2126,7 @@ ${desc}`)
         case prefix+'ytmp3':
             if(isReg(obj)) return
             if(cekumur(cekage)) return
+            if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
             if (args.length === 1) return tobz.reply(from, `Kirim perintah *${prefix}ytmp3 [ Link Yt ]*, untuk contoh silahkan kirim perintah *${prefix}readme*`, id)
             let isLinks = args[1].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
@@ -3666,13 +3669,12 @@ ${desc}`)
             } catch (err) {
                 tobz.reply(from, err, id)
             }
-      case prefix+'gift': // Hanya Admin & Owner maslent yang bisa gift Limit
+        break
+case prefix+'gift': // Hanya Admin & Owner maslent yang bisa gift Limit
             if (!isOwner) return tobz.reply(from, `Maaf, perintah ini hanya dapat dilakukan oleh Admin Yuno!`, id)
                     const nomerr = arg.split(' ')[0]
                     const jmla = arg.split(' ')[1]
                     if(!nomerr) return tobz.reply(from, `Masukkan nomor yang akan di gift, ${prefix}gift [ @tagmember Jumlah ]\n=> Contoh : ${prefix}gift @6287892670067 25`, id)
-                    let textan = nomerr.replace(/[-\s+@c.us]/g,'')
-                    const cusz = textan + '@c.us'
                     if(!jmla) return tobz.reply(from, `Masukkan Jumlah gift quota, ${prefix}gift [ @tagmember Jumlah ]\n=> Contoh : ${prefix}gift @6287892670067 25`, id)
                     if(jmla > 25) return await tobz.reply(from, `Maximal  25!`, id)
                         var found = false
@@ -3683,6 +3685,7 @@ ${desc}`)
                         })
                         if (found !== false) {
                             limit[found].limit = Math.max(0, limit[found].limit);
+                            if(limit[found].limit <= 25) return tobz.reply(from, `Kuota Limit pada nomor tersebut masih penuh\nUntuk gift pastikan kuota limit target sudah habis`, id)
                             if(limit[found].limit <= 0) { // JIKA LIMIT 0 MAKA BISA GIFT
                                 return tobz.reply(from, `Kuota limit pada nomor tersebut sudah penuh!`, id)
                             }else{
@@ -3730,7 +3733,7 @@ ${desc}`)
                     })
                 }}
                 var oz = new os_func();
-                oz.execCommand('node index').then(res=> {
+                oz.execCommand('pm2 restart index').then(res=> {
                 }).catch(err=> {
                     console.log("os >>>", err);
                 })
