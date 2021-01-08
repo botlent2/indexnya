@@ -538,6 +538,8 @@ module.exports = tobz = async (tobz, message) => {
                     if (isAdmin) {return;}
                     var found = false;
                     Object.keys(limit).forEach((i) => {
+
+                        
                         if(limit[i].id == id){
                             found = i
                         }
